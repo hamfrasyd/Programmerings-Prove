@@ -1,0 +1,6 @@
+@RestWindow_HostAddress = http://localhost:5087
+
+GET {{RestWindow_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
