@@ -59,7 +59,7 @@
             }
             return windowToDelete;
         }
--
+
         /// <summary>
         /// genererer et unikt ID for et vindue.
         /// Dette ID er baseret på det nuværende antal vinduer i repositoryet.
