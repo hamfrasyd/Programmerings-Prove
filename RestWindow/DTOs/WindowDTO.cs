@@ -1,4 +1,4 @@
 ﻿namespace RestWindow.DTOs
 {
-    public record WindowDTO(string Model, string EnergyClass, int Price);
+    public record WindowDTO(string Model, char EnergyClass, int Price);
 }

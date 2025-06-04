@@ -5,11 +5,11 @@ namespace WindowLibTest
     [TestClass]
     public class WindowTests
     {
-        [DataRow("A")]
-        [DataRow("B")]
-        [DataRow("C")]
+        [DataRow('A')]
+        [DataRow('B')]
+        [DataRow('C')]
         [TestMethod]
-        public void EnergyClass_Should_Set_Value_To_A_B_or_C(string expectedEnergyClass)
+        public void EnergyClass_Should_Set_Value_To_A_B_or_C(char expectedEnergyClass)
         {
             // Arrange
             Window testWindow = new Window();
@@ -20,13 +20,13 @@ namespace WindowLibTest
             // Assert
             Assert.AreEqual(expectedEnergyClass, testWindow.EnergyClass);
         }
-        [DataRow("D")]
-        [DataRow("E")]
-        [DataRow("F")]
-        [DataRow("Test")]
+        [DataRow('D')]
+        [DataRow('E')]
+        [DataRow('F')]
+        [DataRow('Z')]
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
-        public void EnergyClass_Should_Throw_ArgumentException(string expectedEnergyClass)
+        public void EnergyClass_Should_Throw_ArgumentException(char expectedEnergyClass)
         {
             // Arrange
             Window testWindow = new Window();
@@ -42,10 +42,10 @@ namespace WindowLibTest
         public void EnergyClass_Should_Return_Value()
         {
             // Arrange
-            Window testWindow = new Window("Test Model", "A", 0);
+            Window testWindow = new Window("Test Model", 'A', 0);
 
             // Act
-            string resultEnergyClass = testWindow.EnergyClass;
+            char resultEnergyClass = testWindow.EnergyClass;
 
             // Assert
             Assert.AreEqual(resultEnergyClass, testWindow.EnergyClass);
@@ -88,7 +88,7 @@ namespace WindowLibTest
         public void Price_Should_Return_Value()
         {
             // Arrange
-            Window testWindow = new Window("Test Model", "A", 100);
+            Window testWindow = new Window("Test Model", 'A', 100);
 
             // Act
             int resultPrice = testWindow.Price;

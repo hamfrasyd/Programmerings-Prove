@@ -75,11 +75,11 @@
         /// </summary>
         private void AddInitialWindows()
         {
-            Add(new Window("Model A", "A", 100));
-            Add(new Window("Model B", "B", 200));
-            Add(new Window("Model C", "C", 300));
-            Add(new Window("Model D", "A", 400));
-            Add(new Window("Model E", "B", 500));
+            Add(new Window("Model A", 'A', 100));
+            Add(new Window("Model B", 'B', 200));
+            Add(new Window("Model C", 'C', 300));
+            Add(new Window("Model D", 'A', 400));
+            Add(new Window("Model E", 'B', 500));
         }
 
     }

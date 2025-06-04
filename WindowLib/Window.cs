@@ -8,7 +8,7 @@
     {
         #region instans variabler
         private string _model;
-        private string _energyClass;
+        private char _energyClass;
         private int _price;
         #endregion
 
@@ -49,7 +49,7 @@
         /// </remarks>
         /// <returns>Energi klasse</returns>
         /// <exception cref="ArgumentException">Energi klasse skal være A, B eller C.</exception>
-        public string EnergyClass
+        public char EnergyClass
         {
             get
             {
@@ -57,16 +57,16 @@
             }
             set
             {
-                switch (value.ToUpper()) // null
+                switch (value) // null
                 {
-                    case "A":
-                    case "B":
-                    case "C":
+                    case 'A':
+                    case 'B':
+                    case 'C':
                         break;
                     default:
                         throw new ArgumentException("Energi klasse skal være A, B eller C");
                 }
-                _energyClass = value.ToUpper();
+                _energyClass = value;
             }
         }
         /// <summary>
@@ -102,7 +102,7 @@
         /// <param name="model">Modelnavn for vinduet</param>
         /// <param name="energyClass">Energi klasse for vinduet</param>
         /// <param name="price">Pris for vinduet</param>
-        public Window(string model, string energyClass, int price)
+        public Window(string model, char energyClass, int price)
         {
             Model = model;
             EnergyClass = energyClass;
@@ -114,7 +114,7 @@
         /// <remarks>
         /// Default constructor sætter Windowlib til at være, Model: "Default Model", EnergyClass: "A" og Price: 0.
         /// </remarks>
-        public Window() : this("Default Model", "A", 0)
+        public Window() : this("Default Model", 'A', 0)
         {
         }
         #endregion
